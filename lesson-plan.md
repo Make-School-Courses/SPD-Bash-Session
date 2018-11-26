@@ -2,9 +2,11 @@
 
 aaa
 
+
 ## History
 
 bbb
+
 
 ## Shells
 
@@ -13,6 +15,7 @@ bbb
 - `fsh`
 - `etc...`
 
+
 ## Create a Script
 
 - `touch myscript.sh`
@@ -20,6 +23,9 @@ bbb
 - write code
 - profit!
 
+
 ## Managing Scripts
 
 - dotfiles
+
+
