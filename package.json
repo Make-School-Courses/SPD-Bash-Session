@@ -8,7 +8,6 @@
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve",
-    "local": "reveal-md test.md",
     "build": "grunt"
   },
   "author": {
@@ -38,7 +37,6 @@
     "grunt-sass": "^2.0.0",
     "grunt-zip": "~0.17.1",
     "mustache": "^2.3.0",
-    "reveal-md": "^2.3.1",
     "socket.io": "^2.1.1"
   },
   "license": "MIT"

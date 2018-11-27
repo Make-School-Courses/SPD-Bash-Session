@@ -3,56 +3,44 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-    <title>reveal.js</title>
-
+    <title>[SPD] Advanced Bash & Unix Utilities</title>
     <link rel="stylesheet" href="css/reveal.css" />
-    <link rel="stylesheet" href="css/theme/black.css" />
-
+    <link rel="stylesheet" href="css/theme/night.css" />
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css" />
-
-    <!-- Printing and PDF exports -->
     <script>
-      var link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.type = "text/css";
-      link.href = window.location.search.match(/print-pdf/gi) ? "css/print/pdf.css" : "css/print/paper.css";
-      document.getElementsByTagName("head")[0].appendChild(link);
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
     </script>
+    <style>
+      .reveal section code {
+        overflow: visible;
+      }
+      .reveal section p {
+        font-size: 0.7em !important;
+        margin: 0.4em 0;
+      }
+      .reveal section ul li {
+        font-size: 0.9em;
+      }
+      .reveal section pre code {
+        font-size: 1em !important;
+      }
+    </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
         <section
           data-markdown="lesson-plan.md"
-          data-separator="^\n\n\n"
-          data-separator-vertical="^\n\n"
+          data-separator="^\r?\n---\r?\n"
+          data-separator-vertical="^\r?\n~~~\r?\n"
           data-separator-notes="^Note:"
           data-charset="iso-8859-15"
         ></section>
-        <!--
-          </section>
-              <section>
-                <h3>History</h3>
-                <p>The Bourne shell (<pre class="inline">sh</pre>) is a shell, or command-line interpreter, for computer operating systems.</p>
-                <p>The Bourne shell was the default shell for Version 7 Unix. Most Unix-like systems continue to have <pre>/bin/sh</pre>—which will
-                be the Bourne shell, or a symbolic link or hard link to a compatible shell—even when other shells are used by most
-                users.</p>
-                <p>
-                  <strong>PAST</strong>: Brian Fox began coding January 10, 1988 at the behest of Richard Stallman and the
-                  Free Software Foundation.
-                </p>
-                <p>
-                  <strong>PRESENT</strong>:
-                  <ul>
-                    <li>By far the most popular shell among users of Linux. </li>
-                    <li>Default interactive shell in Linux and macOS.</li>
-                    <li>Ported to Windows (Cygwin + MinGW = Git Bash)</li>
-                  </ul>
-                </p>
-              </section>
-        -->
       </div>
     </div>
 
@@ -64,10 +52,13 @@
       // - https://github.com/hakimel/reveal.js#configuration
       // - https://github.com/hakimel/reveal.js#dependencies
       Reveal.initialize({
+        history: true,
+        loop: true,
+        fragmentInURL: true,
         dependencies: [
           // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
           {
-            src: "lib/js/classList.js",
+            src: 'lib/js/classList.js',
             condition: function() {
               return !document.body.classList;
             }
@@ -75,21 +66,21 @@
 
           // Interpret Markdown in <section> elements
           {
-            src: "plugin/markdown/marked.js",
+            src: 'plugin/markdown/marked.js',
             condition: function() {
-              return !!document.querySelector("[data-markdown]");
+              return !!document.querySelector('[data-markdown]');
             }
           },
           {
-            src: "plugin/markdown/markdown.js",
+            src: 'plugin/markdown/markdown.js',
             condition: function() {
-              return !!document.querySelector("[data-markdown]");
+              return !!document.querySelector('[data-markdown]');
             }
           },
 
           // Syntax highlight for <code> elements
           {
-            src: "plugin/highlight/highlight.js",
+            src: 'plugin/highlight/highlight.js',
             async: true,
             callback: function() {
               hljs.initHighlightingOnLoad();
@@ -97,14 +88,18 @@
           },
 
           // Zoom in and out with Alt+click
-          { src: "plugin/zoom-js/zoom.js", async: true },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
 
           // Speaker notes
-          { src: "plugin/notes/notes.js", async: true },
+          { src: 'plugin/notes/notes.js', async: true },
 
           // MathJax
-          { src: "plugin/math/math.js", async: true }
+          { src: 'plugin/math/math.js', async: true }
         ]
+      });
+
+      Reveal.addEventListener('ready', function(event) {
+        // event.currentSlide, event.indexh, event.indexv
       });
     </script>
   </body>
