@@ -162,13 +162,11 @@ $ mkdir -p tmp/a/b/c
 
 ~~~
 
-#### Find in a Codebase
+**Find** in a Codebase
 
 ```bash
 $ find path_to_start | grep \\.py | xargs egrep -C3 "TODO" | less
 ```
-
-~~~
 
 ---
 
