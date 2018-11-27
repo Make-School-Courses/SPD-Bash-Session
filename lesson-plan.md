@@ -106,7 +106,7 @@ $ pwd | pbcopy
 * `Ctrl-E` - Go to end of line.
 
 <br>
-To find more, simply run:
+To **find more**, simply **run**:
 
 ```bash
 $ bind -p
@@ -247,4 +247,12 @@ $ cat picture.png archive.rar > hidden_archive_in_pic.png
 
 <img src="assets/bash.png" style="border: none; background: none;">
 
-### Questions?
+### What Commands Will You Try?
+
+---
+
+<img src="assets/bash.png" style="border: none; background: none;">
+
+### Questions? Comments?
+### Commands to Add?
+
