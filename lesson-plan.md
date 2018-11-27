@@ -28,9 +28,11 @@
 
 ### `csh`, `ksh`, `ohmy!`
 
-`sh` established that a shell == a program.
-
-The idea caught on, and more shells were developed. They each had individual strengths, but shared weaknesses:
+`sh` established a new fact:<br>**shell can be a program a user could both write _and_ use**.
+<br><br>
+The **idea caught on**, and **more shells were developed**.
+<br><br>
+They **each had individual strengths**, but **shared weaknesses**:
 
 * `sh`: great scripting, but too few features.
 
@@ -45,7 +47,7 @@ The idea caught on, and more shells were developed. They each had individual str
 <img src="assets/stallman.jpg" height="200">
 <img src="assets/BrianJFox.png" height="200">
 
-The Free Software Foundation writes a "from-scratch" implementation of a POSIX shell, taking all the ideas from `ksh`, and adding new features of their own, like programmable completion.
+The Free Software Foundation writes a **"from-scratch" implementation** of a shell, taking **all the ideas from `ksh`**, and **adding new features** of their own, like **programmable completion**.
 
 ~~~
 
@@ -82,6 +84,16 @@ bash-4.4$
 <img src="assets/bash.png" style="border: none; background: none;">
 
 ### Ready? Time to Level Up!
+
+---
+
+#### Copy to Clipboard from Command Line
+
+**macOS Only**. Any command's `stdout` can be **captured and piped to `pbcopy`**.
+
+```bash
+$ pwd | pbcopy
+```
 
 ---
 
@@ -162,10 +174,40 @@ $ mkdir -p tmp/a/b/c
 
 ~~~
 
-**Find** in a Codebase
+**Tar an Entire Directory** for Backup:
+
+Good for making an exact recursive copy/backup of a directory including symlinks (rather than following them or ignoring them like cp):
+
+```bash
+$ mkdir new_dir
+$ cd old_dir
+$ tar cf - . | ( cd ../old_dir; tar xf - )
+```
+
+~~~
+
+**Find a String** in a Codebase:
 
 ```bash
 $ find path_to_start | grep \\.py | xargs egrep -C3 "TODO" | less
+```
+
+---
+
+#### List Top 10 Commands Executed
+
+```bash
+$ history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head
+
+4 egrep
+3 defaults
+3 clear
+1 xcode-select
+1 sh
+1 ls
+1 less
+1 history
+1 cd
 ```
 
 ---
